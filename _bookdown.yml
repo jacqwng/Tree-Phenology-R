@@ -11,3 +11,5 @@ rmd_files:
 - 02-tools.Rmd
 - 03-tree_dormancy.Rmd
 - 04-climate_change.Rmd
+- 05-winter_chill.Rmd
+- 06-manual_chill.Rmd
