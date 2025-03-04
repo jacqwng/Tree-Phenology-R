@@ -261,6 +261,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
 </ul>
 
       </nav>
@@ -1089,7 +1090,7 @@ Perc_complete
 <span id="cb132-10"><a href="filling-gaps-in-temperature-records.html#cb132-10" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Date&quot;</span>) <span class="sc">+</span></span>
 <span id="cb132-11"><a href="filling-gaps-in-temperature-records.html#cb132-11" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Daily minimum temperature (°C)&quot;</span>) <span class="sc">+</span></span>
 <span id="cb132-12"><a href="filling-gaps-in-temperature-records.html#cb132-12" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> fixed_gaps, <span class="fu">aes</span>(DATE, Tmin), <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">lwd =</span> <span class="fl">1.3</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-130-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-121-1.png" width="672" /></p>
 <p>The plot illustrates original temperature measurements (in black) alongside interpolated values (in red). To simulate gaps, values were removed incrementally from the dataset - starting with single missing values on the left and increasing up to 13 consecutive missing values on the right. The results show that for shorter gaps (left side), interpolation closely follows the temperature trends. However, as gaps grow longer (right side), the interpolated values deviate more significantly, failing to capture the actual temperature dynamics accurately. This visual demonstrates the diminishing reliability of linear interpolation as gaps increase in size.</p>
 <div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="filling-gaps-in-temperature-records.html#cb133-1" tabindex="-1"></a>fixed_gaps[,<span class="st">&quot;error&quot;</span>] <span class="ot">&lt;-</span> <span class="fu">abs</span>(fixed_gaps<span class="sc">$</span>Tmin <span class="sc">-</span> fixed_gaps<span class="sc">$</span>Tmin_observed)</span>
 <span id="cb133-2"><a href="filling-gaps-in-temperature-records.html#cb133-2" tabindex="-1"></a></span>
@@ -1100,7 +1101,7 @@ Perc_complete
 <span id="cb133-7"><a href="filling-gaps-in-temperature-records.html#cb133-7" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Error introduced by interpolation (°C)&quot;</span>) <span class="sc">+</span></span>
 <span id="cb133-8"><a href="filling-gaps-in-temperature-records.html#cb133-8" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> fixed_gaps[<span class="fu">which</span>(<span class="sc">!</span>fixed_gaps<span class="sc">$</span>no_Tmin),],</span>
 <span id="cb133-9"><a href="filling-gaps-in-temperature-records.html#cb133-9" tabindex="-1"></a>             <span class="fu">aes</span>(DATE, error),<span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">cex =</span> <span class="dv">3</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-131-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-122-1.png" width="672" /></p>
 <p>The size of interpolation errors depends on temperature variation during the missing periods - high variation leads to larger errors. As gap sizes increase, errors tend to grow, especially in the middle of large gaps, where interpolated values can be far from actual conditions. While errors are zero at points where data exists, larger gaps clearly require a more advanced method for accurate estimation.</p>
 </div>
 <div id="filling-long-gaps-in-daily-records" class="section level2 hasAnchor" number="11.4">
@@ -4489,7 +4490,7 @@ Gaps_remain
 <span id="cb154-44"><a href="filling-gaps-in-temperature-records.html#cb154-44" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">draw_quantiles =</span> <span class="fu">c</span>(<span class="fl">0.25</span>,<span class="fl">0.5</span>,<span class="fl">0.75</span>)) <span class="sc">+</span></span>
 <span id="cb154-45"><a href="filling-gaps-in-temperature-records.html#cb154-45" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Variable and bias evaluation interval&quot;</span>) <span class="sc">+</span></span>
 <span id="cb154-46"><a href="filling-gaps-in-temperature-records.html#cb154-46" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Prediction error&quot;</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-161-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-152-1.png" width="672" /></p>
 <p>It is also possible to evaluate the mean daily error:</p>
 <div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="filling-gaps-in-temperature-records.html#cb155-1" tabindex="-1"></a>error_eval <span class="ot">&lt;-</span></span>
 <span id="cb155-2"><a href="filling-gaps-in-temperature-records.html#cb155-2" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">Variable =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&quot;Tmin&quot;</span>,<span class="dv">3</span>),<span class="fu">rep</span>(<span class="st">&quot;Tmax&quot;</span>,<span class="dv">3</span>)),</span>
@@ -4526,7 +4527,7 @@ Tmin
 Year
 </td>
 <td style="text-align:center;">
-0.9938378
+0.9822947
 </td>
 </tr>
 <tr>
@@ -4537,7 +4538,7 @@ Tmin
 Month
 </td>
 <td style="text-align:center;">
-0.9867591
+0.9740505
 </td>
 </tr>
 <tr>
@@ -4548,7 +4549,7 @@ Tmin
 Two weeks
 </td>
 <td style="text-align:center;">
-0.9871268
+0.9752546
 </td>
 </tr>
 <tr>
@@ -4559,7 +4560,7 @@ Tmax
 Year
 </td>
 <td style="text-align:center;">
-0.8340387
+0.8214208
 </td>
 </tr>
 <tr>
@@ -4570,7 +4571,7 @@ Tmax
 Month
 </td>
 <td style="text-align:center;">
-0.8092423
+0.8009696
 </td>
 </tr>
 <tr>
@@ -4581,7 +4582,7 @@ Tmax
 Two weeks
 </td>
 <td style="text-align:center;">
-0.8124872
+0.8025128
 </td>
 </tr>
 </tbody>
@@ -6544,7 +6545,7 @@ gitbook.start({
 "link": "https://github.com/jacqwng/Tree-Phenology-R/blob/main/11-gaps.Rmd",
 "text": null
 },
-"download": null,
+"download": ["bookdownproj.pdf", "bookdownproj.epub"],
 "search": {
 "engine": "fuse",
 "options": null
