@@ -15,3 +15,5 @@ rmd_files:
 - 06-manual_chill.Rmd
 - 07-chill.Rmd
 - 08-making_temp.Rmd
+- 09-tools_R.Rmd
+- 10-temp_data.Rmd
