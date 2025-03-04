@@ -141,7 +141,7 @@ kable(station_list_Yakima, align = c("c")) %>%
 
 2)  *Download weather data for the most promising station on the list*
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 weather_Yakima <- handle_gsod(action = "download_weather",
                               location = station_list_Yakima$chillR_code[1],
                               time_interval = c(1990, 2020))

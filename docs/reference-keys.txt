@@ -85,3 +85,11 @@ actionlist_stations
 actiondownload_weather
 downloaded-weather-as-action-argument
 exercises-on-getting-temperature-data
+filling-gaps-in-temperature-records
+learning-goals-7
+gaps
+filling-short-gaps-in-daily-records
+filling-long-gaps-in-daily-records
+bias-correction-for-shorter-intervals
+saving-the-data-for-later
+exercises-on-filling-gaps
