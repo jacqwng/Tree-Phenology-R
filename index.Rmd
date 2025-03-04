@@ -11,7 +11,7 @@ Hi, my name is Jacqueline. I’m a master’s student in Crop Sciences at the [U
 
 The content begins with an introduction to phenology (with a special emphasis on dormancy) as well as an overview of climate change. It then focuses heavily on the practical application of the `chillR` package for R. This tool has been continuously developed since 2013 by [Prof. Dr. Eike Lüdeling](https://www.gartenbauwissenschaften.uni-bonn.de/en/staff/eike-luedeling), head of the HortiBonn research group at the [Institute of Crop Science and Resource Conservation (INRES)](https://www.inres.uni-bonn.de/de) at the University of Bonn, to support this type of analysis.
 
-# Learning goals
+## Learning goals
 
 This course will offer the following skills and experiences:
 
