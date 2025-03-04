@@ -41,3 +41,17 @@ manual-calculation-of-chilling-hours
 automation-with-functions
 application-example
 exercises-on-basic-chill-modeling
+chill
+learning-goals-4
+chilling_hours-function
+utah-model
+creating-custom-chill-models-with-step_model
+dynamic-model
+chilling-and-tempresponse-functions
+exercises-on-chill-models
+making-hourly-temperatures
+learning-goals-5
+generating-hourly-temperatures
+idealized-daily-temperature-curves
+empirical-daily-temperature-curves
+exercises-on-hourly-temperatures

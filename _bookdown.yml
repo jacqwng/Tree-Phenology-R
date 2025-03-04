@@ -13,3 +13,5 @@ rmd_files:
 - 04-climate_change.Rmd
 - 05-winter_chill.Rmd
 - 06-manual_chill.Rmd
+- 07-chill.Rmd
+- 08-making_temp.Rmd
