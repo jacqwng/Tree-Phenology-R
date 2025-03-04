@@ -75,7 +75,7 @@ kable(fixed_winter_days$QC, align = c("c")) %>%
                 position = "center", 
                 font_size = 14) %>% 
   scroll_box(width = "100%",
-             height = "500px",
+             height = "300px",
              fixed_thead = TRUE)
 
 ```
@@ -90,7 +90,7 @@ kable(fixed_all_days$QC, align = c("c")) %>%
                 position = "center", 
                 font_size = 14) %>% 
   scroll_box(width = "100%",
-             height = "500px",
+             height = "300px",
              fixed_thead = TRUE)
 ```
 
@@ -152,7 +152,7 @@ kable(Bonn_QC, align = c("c")) %>%
                 position = "center", 
                 font_size = 14) %>% 
   scroll_box(width = "100%",
-             height = "500px",
+             height = "300px",
              fixed_thead = TRUE)
 ```
 
@@ -160,7 +160,7 @@ The dataset for Bonn has significant gaps between 1998 and 2004, as well as in 2
 
 To address these gaps, data from nearby weather stations is required. The `handle_gsod()` function can be used to find relevant stations in the surrounding area.
 
-```{r, eval=FALSE}
+```{r eval=FALSE, message=FALSE}
 station_list <- handle_gsod(action = "list_stations",
                             location = c(7.10, 50.73),
                             time_interval = c(1990, 2020))
@@ -176,7 +176,7 @@ kable(station_list, align = c("c")) %>%
                 position = "center", 
                 font_size = 14) %>% 
   scroll_box(width = "100%",
-             height = "500px",
+             height = "300px",
              fixed_thead = TRUE)
 ```
 
@@ -312,7 +312,7 @@ kable(post_patch_stats, align = c("c")) %>%
                 position = "center", 
                 font_size = 14) %>% 
   scroll_box(width = "100%",
-             height = "500px",
+             height = "300px",
              fixed_thead = TRUE)
 ```
 
@@ -347,7 +347,7 @@ kable(patched_monthly$statistics$Tmin$NORVENICH, align = c("c")) %>%
   kable_styling("striped", 
                 position = "center", 
                 font_size = 14) %>% 
-  scroll_box(height = "500px",
+  scroll_box(height = "300px",
              fixed_thead = TRUE)
 
 ```
@@ -477,7 +477,7 @@ library(kableExtra)
 kable(Yakima_QC, align = c("c")) %>%
   kable_styling("striped", position = "left", font_size = 14) %>% 
   scroll_box(width = "100%",
-             height = "500px",
+             height = "300px",
              fixed_thead = TRUE)
 ```
 
@@ -494,14 +494,14 @@ library(kableExtra)
 kable(station_list_Yakima, align = c("c")) %>%
   kable_styling("striped", position = "left", font_size = 14) %>% 
   scroll_box(width = "100%",
-             height = "500px",
+             height = "300px",
              fixed_thead = TRUE)
 ```
 
 3.  *Identify suitable weather stations for patching gaps*
 4.  *Download weather data for promising stations, convert them to* `chillR` *format and compile them in a list*
 
-```{r message=FALSE, warning=FALSE}
+```{r, message=FALSE, warning=FALSE}
 patch_weather <-
   handle_gsod(action = "download_weather",
               location = as.character(station_list_Yakima$chillR_code[c(4, 6, 8)]),
