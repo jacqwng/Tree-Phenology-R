@@ -184,7 +184,7 @@ Many of the stations listed may not be useful, as they only overlap with the exi
 
 In `chillR` version 0.74 and later, the `handle_gsod()` function can download multiple station records at once, returning them as a named list. This function will be used to download the records for the selected stations (positions 2, 3, and 6 in the station list).
 
-```{r, eval=FALSE, message=FALSE, warning=FALSE}
+```{r, message=FALSE, warning=FALSE}
 patch_weather <-
       handle_gsod(action = "download_weather",
                   location = as.character(station_list$chillR_code[c(2, 3, 6)]),
